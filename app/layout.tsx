@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={`${fontClasses} bg-neutral-50 dark:bg-neutral-800`}>
+      <body className={`${fontClasses} bg-neutral-50 dark:bg-neutral-800`} suppressHydrationWarning>
         <ThemeProvider
           attribute='class'
           defaultTheme='light'

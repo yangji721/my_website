@@ -32,34 +32,30 @@ export interface HomepageSection {
 export type FontStyle = "sans" | "serif" | "mono";
 
 export const personalInfo: PersonalInfo = {
-  name: "Hiroshi Ishii",
-  profilePicture: "/profile.jpg", //optional
-  role: "Professor",
-  university: "MIT Media Lab",
-  universityWebsite: "https://www.zju.edu.cn/",
+  name: "Yang Ji",
+  profilePicture: "/beibei.jpg", //optional
+  role: "Ph.D. Student",
+  university: "HKUST(GZ)",
+  universityWebsite: "https://hkust-gz.edu.cn/",
   socialMedia: [
-    { name: "Email", url: "https://linkedin.com" },
-    { name: "Twitter", url: "https://twitter.com/anxndsgn" },
+    { name: "Email", url: "mailto:yji655@connect.hkust-gz.edu.cn" },
     {
       name: "GitHub",
-      url: "https://github.com/anxndsgn/academic-homepage-template",
+      url: "https://github.com/yangji721",
     },
-    { name: "LinkedIn", url: "https://linkedin.com" },
-    { name: "ORCID", url: "https://orcid" },
-    { name: "Google Scholar", url: "https://scholar.google.com" },
+    { name: "Google Scholar", url: "https://scholar.google.com/citations?user=yangji721" },
   ],
 };
 
 export const websiteInfo: WebsiteInfo = {
   title: personalInfo.name,
-  description: "HCI researcher",
+  description: "Ph.D. Student at HKUST(GZ), researching Explainable AI and LLM Compression",
 };
 
 export const navigations: NavigationItem[] = [
   { name: "Projects", route: "/projects" },
   { name: "Publications", route: "/publications" },
   { name: "News", route: "/news" },
-  { name: "CV", route: "/cv/cv.pdf" },
 ];
 
 export const homepageSection: HomepageSection = {
