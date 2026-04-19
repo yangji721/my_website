@@ -3,17 +3,24 @@ import Image from 'next/image';
 import { personalInfo } from '@/data/website.config';
 import { CustomMDX } from '@/components/mdx';
 
-function authorProcess(authorsStr: string, personalInfoName: string): string {
+function authorProcess(authorsStr: string, personalInfoName: string, cofirstStr?: string): string {
   const authors = authorsStr.split('and');
+
+  const cofirstNames = cofirstStr
+    ? cofirstStr.split('and').map((a) => a.trim().split(', ').reverse().join(' ').trim())
+    : [];
 
   const boldedAuthors = authors.map((author) => {
     author = author.trim().split(', ').reverse().join(' ').trim();
 
+    const isCofirst = cofirstNames.includes(author);
+    const suffix = isCofirst ? '\\*' : '';
+
     if (author === personalInfoName) {
-      return `**${personalInfoName}**`;
+      return `**${personalInfoName}**${suffix}`;
     }
 
-    return author;
+    return author + suffix;
   });
 
   return boldedAuthors.join(', ');
@@ -29,6 +36,7 @@ interface BibtexEntry {
     booktitle?: string;
     year?: string;
     award?: string;
+    cofirst?: string;
   };
 }
 
@@ -51,7 +59,8 @@ export default function Publications({ bibtex }: PublicationsProps) {
       {parsed.map((item) => {
         const processedAuthors = authorProcess(
           item.entryTags.author || '',
-          personalInfo.name
+          personalInfo.name,
+          item.entryTags.cofirst
         );
         return (
           <li key={item.entryTags.title} className=' list-decimal'>
@@ -73,6 +82,9 @@ export default function Publications({ bibtex }: PublicationsProps) {
                   item.entryTags.booktitle?.replace(/{|}/g, '')}
               </span>
               <span className='mr-2'>{item.entryTags.year}</span>
+              {item.entryTags.cofirst && (
+                <span className='text-xs text-neutral-500 dark:text-neutral-400'>(* Co-first authors)</span>
+              )}
               {item.entryTags.award &&
                 (item.entryTags.award === 'Honorable Mention' ? (
                   <Image
