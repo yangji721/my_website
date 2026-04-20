@@ -34,11 +34,11 @@ export type FontStyle = "sans" | "serif" | "mono";
 export const personalInfo: PersonalInfo = {
   name: "Yang Ji",
   profilePicture: "/beibei.jpg", //optional
-  role: "Ph.D. Student",
+  role: "Ph.D. Graduate",
   university: "HKUST(GZ)",
   universityWebsite: "https://hkust-gz.edu.cn/",
   socialMedia: [
-    { name: "Email", url: "mailto:yji655@connect.hkust-gz.edu.cn" },
+    { name: "Email", url: "mailto:yangji.me721@gmail.com" },
     {
       name: "GitHub",
       url: "https://github.com/yangji721",
@@ -49,7 +49,7 @@ export const personalInfo: PersonalInfo = {
 
 export const websiteInfo: WebsiteInfo = {
   title: personalInfo.name,
-  description: "Ph.D. Graduate at HKUST(GZ), researching Explainable AI and LLM Compression",
+  description: "Ph.D. Graduate at HKUST(GZ), researching Explainable AI and AI for Science. Passionate about making AI more transparent and trustworthy.",
 };
 
 export const navigations: NavigationItem[] = [
