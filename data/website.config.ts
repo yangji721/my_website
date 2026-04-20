@@ -49,7 +49,7 @@ export const personalInfo: PersonalInfo = {
 
 export const websiteInfo: WebsiteInfo = {
   title: personalInfo.name,
-  description: "Ph.D. Student at HKUST(GZ), researching Explainable AI and LLM Compression",
+  description: "Ph.D. Graduate at HKUST(GZ), researching Explainable AI and LLM Compression",
 };
 
 export const navigations: NavigationItem[] = [
