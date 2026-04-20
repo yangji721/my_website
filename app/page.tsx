@@ -2,7 +2,7 @@ import AboutSection from '@/components/AboutSection';
 import LatestNewsSection from '@/components/LatestNewsSection';
 import ProjectSection from '@/components/ProjectSection';
 import SelectedPublicationsSection from '@/components/SelectedPublicationsSection';
-import bibtex from '@/data/publications/Publications.bib';
+import bibtex from '@/data/publications/SelectedPublications.bib';
 import { homepageSection } from '@/data/website.config';
 
 export default function Page() {
